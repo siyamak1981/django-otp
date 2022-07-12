@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-07 14:26+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: education/settings.py:183
+msgid "English"
+msgstr "انگلیسی"
+
+#: education/settings.py:184
+msgid "Iran"
+msgstr "ایران"
+
+#: painless/models/mixins.py:12
+msgid "published_at"
+msgstr "تاریخ انتشار"
+
+#: session/apps.py:7
+#, fuzzy
+#| msgid "Permissions"
+msgid "session"
+msgstr "مجوزها"
+
+#: session/models.py:13
+msgid "uid"
+msgstr "ای دی"
+
+#: session/models.py:15
+#, fuzzy
+#| msgid "user"
+msgid "user_type"
+msgstr "نوع کاربری"
+
+#: session/models.py:17
+msgid "notification_token"
+msgstr "نوتیقیکیشن توکن"
+
+#: session/models.py:18
+msgid "uniqe_device"
+msgstr "نام وسیله"
+
+#: session/models.py:19
+msgid "client_version"
+msgstr "ورژن کاربر"
+
+#: session/models.py:20
+msgid "server_version"
+msgstr "ورژن سرور"
+
+#: session/models.py:21
+msgid "refresh_token"
+msgstr "توکن"
+
+#: session/models.py:22
+msgid "remote address"
+msgstr "ای پی آدرس"
+
+#: session/models.py:27
+msgid "session"
+msgstr "جلسه"
+
+#: session/models.py:28
+msgid "sessions"
+msgstr "جلسات"
+
+#~ msgid "Your username, in case you’ve forgotten:"
+#~ msgstr "نام کاربریتان را فراموش کرده اید"
+
+#~ msgid "Thanks for using our site!"
+#~ msgstr "متشکرم از اینکه از این وبسایت استفاده کرده اید"
+
+#~ msgid "Personal info"
+#~ msgstr "اطلاعات شخصی"
+
+#~ msgid "Important dates"
+#~ msgstr "تاریخ های ورود"
+
+#~ msgid "title"
+#~ msgstr "متن"
+
+#~ msgid "City"
+#~ msgstr "شهر"
+
+#~ msgid "Cities"
+#~ msgstr "شهرها"
+
+#~ msgid "Province"
+#~ msgstr "ایالت"
+
+#~ msgid "Provinces"
+#~ msgstr "ایالتها"
+
+#~ msgid "Male"
+#~ msgstr "آقا"
+
+#~ msgid "Female"
+#~ msgstr "خانم"
+
+#~ msgid "Trans"
+#~ msgstr "ترنس"
+
+#~ msgid "Mobile"
+#~ msgstr "موبایل"
+
+#~ msgid "Email"
+#~ msgstr "ایمیل"
+
+#~ msgid "users"
+#~ msgstr "کاربران"
+
+#~ msgid "Social Accounts"
+#~ msgstr "شبکه اجتماعی"

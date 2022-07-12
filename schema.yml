@@ -1,0 +1,1687 @@
+openapi: 3.0.3
+info:
+  title: Crypto Education API
+  version: 1.0.0
+  description: Crypto Currency Education
+paths:
+  /en-us/api/schema/:
+    get:
+      operationId: schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - en
+          - fa
+      tags:
+      - schema
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /en-us/api/v1/city/:
+    get:
+      operationId: v1_city_list
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/City'
+          description: ''
+    post:
+      operationId: v1_city_create
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/City'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/City'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/City'
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/City'
+          description: ''
+  /en-us/api/v1/city/{id}/:
+    get:
+      operationId: v1_city_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this City.
+        required: true
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/City'
+          description: ''
+    put:
+      operationId: v1_city_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this City.
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/City'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/City'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/City'
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/City'
+          description: ''
+    patch:
+      operationId: v1_city_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this City.
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCity'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCity'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCity'
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/City'
+          description: ''
+    delete:
+      operationId: v1_city_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this City.
+        required: true
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /en-us/api/v1/province/:
+    get:
+      operationId: v1_province_list
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Province'
+          description: ''
+    post:
+      operationId: v1_province_create
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Province'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Province'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Province'
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Province'
+          description: ''
+  /en-us/api/v1/province/{id}/:
+    get:
+      operationId: v1_province_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Province.
+        required: true
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Province'
+          description: ''
+    put:
+      operationId: v1_province_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Province.
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Province'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Province'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Province'
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Province'
+          description: ''
+    patch:
+      operationId: v1_province_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Province.
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProvince'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProvince'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProvince'
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Province'
+          description: ''
+    delete:
+      operationId: v1_province_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Province.
+        required: true
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /en-us/api/v1/rest-auth/account-confirm-email/:
+    post:
+      operationId: v1_rest_auth_account_confirm_email_create
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerifyEmail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/VerifyEmail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/VerifyEmail'
+        required: true
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestAuthDetail'
+          description: ''
+  /en-us/api/v1/rest-auth/login/:
+    post:
+      operationId: v1_rest_auth_login_create
+      description: |-
+        Check the credentials and return the REST Token
+        if the credentials are valid and authenticated.
+        Calls Django Auth login method to register User ID
+        in Django session framework
+
+        Accept the following POST parameters: username, password
+        Return the REST Framework Token Object's key.
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Login'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Login'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Login'
+        required: true
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JWT'
+          description: ''
+  /en-us/api/v1/rest-auth/logout/:
+    get:
+      operationId: v1_rest_auth_logout_retrieve
+      description: |-
+        Calls Django logout method and delete the Token object
+        assigned to the current User object.
+
+        Accepts/Returns nothing.
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestAuthDetail'
+          description: ''
+    post:
+      operationId: v1_rest_auth_logout_create
+      description: |-
+        Calls Django logout method and delete the Token object
+        assigned to the current User object.
+
+        Accepts/Returns nothing.
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestAuthDetail'
+          description: ''
+  /en-us/api/v1/rest-auth/password/change/:
+    post:
+      operationId: v1_rest_auth_password_change_create
+      description: |-
+        Calls Django Auth SetPasswordForm save method.
+
+        Accepts the following POST parameters: new_password1, new_password2
+        Returns the success/fail message.
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordChange'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PasswordChange'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PasswordChange'
+        required: true
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestAuthDetail'
+          description: ''
+  /en-us/api/v1/rest-auth/password/reset/:
+    post:
+      operationId: v1_rest_auth_password_reset_create
+      description: |-
+        Calls Django Auth PasswordResetForm save method.
+
+        Accepts the following POST parameters: email
+        Returns the success/fail message.
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordReset'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PasswordReset'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PasswordReset'
+        required: true
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestAuthDetail'
+          description: ''
+  /en-us/api/v1/rest-auth/password/reset/confirm/:
+    post:
+      operationId: v1_rest_auth_password_reset_confirm_create
+      description: |-
+        Password reset e-mail link is confirmed, therefore
+        this resets the user's password.
+
+        Accepts the following POST parameters: token, uid,
+            new_password1, new_password2
+        Returns the success/fail message.
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordResetConfirm'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PasswordResetConfirm'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PasswordResetConfirm'
+        required: true
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestAuthDetail'
+          description: ''
+  /en-us/api/v1/rest-auth/password/reset/confirm/{uidb64}/{token}/:
+    post:
+      operationId: v1_rest_auth_password_reset_confirm_create_2
+      description: |-
+        Password reset e-mail link is confirmed, therefore
+        this resets the user's password.
+
+        Accepts the following POST parameters: token, uid,
+            new_password1, new_password2
+        Returns the success/fail message.
+      parameters:
+      - in: path
+        name: token
+        schema:
+          type: string
+          pattern: ^[-\w]+$
+        required: true
+      - in: path
+        name: uidb64
+        schema:
+          type: string
+          pattern: ^[-\w]+$
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordResetConfirm'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PasswordResetConfirm'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PasswordResetConfirm'
+        required: true
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestAuthDetail'
+          description: ''
+  /en-us/api/v1/rest-auth/registration/:
+    post:
+      operationId: v1_rest_auth_registration_create
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Register'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Register'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Register'
+        required: true
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestAuthDetail'
+          description: ''
+  /en-us/api/v1/rest-auth/registration/resend-email/:
+    post:
+      operationId: v1_rest_auth_registration_resend_email_create
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResendEmailVerification'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ResendEmailVerification'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ResendEmailVerification'
+        required: true
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestAuthDetail'
+          description: ''
+  /en-us/api/v1/rest-auth/registration/verify-email/:
+    post:
+      operationId: v1_rest_auth_registration_verify_email_create
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerifyEmail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/VerifyEmail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/VerifyEmail'
+        required: true
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestAuthDetail'
+          description: ''
+  /en-us/api/v1/rest-auth/token/refresh/:
+    post:
+      operationId: v1_rest_auth_token_refresh_create
+      description: |-
+        Takes a refresh type JSON web token and returns an access type JSON web
+        token if the refresh token is valid.
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenRefresh'
+          description: ''
+  /en-us/api/v1/rest-auth/token/verify/:
+    post:
+      operationId: v1_rest_auth_token_verify_create
+      description: |-
+        Takes a token and indicates if it is valid.  This view provides no
+        information about a token's fitness for a particular use.
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenVerify'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenVerify'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenVerify'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenVerify'
+          description: ''
+  /en-us/api/v1/rest-auth/user/:
+    get:
+      operationId: v1_rest_auth_user_retrieve
+      description: |-
+        Reads and updates UserModel fields
+        Accepts GET, PUT, PATCH methods.
+
+        Default accepted fields: username, first_name, last_name
+        Default display fields: pk, username, email, first_name, last_name
+        Read-only fields: pk, email
+
+        Returns UserModel fields.
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDetails'
+          description: ''
+    put:
+      operationId: v1_rest_auth_user_update
+      description: |-
+        Reads and updates UserModel fields
+        Accepts GET, PUT, PATCH methods.
+
+        Default accepted fields: username, first_name, last_name
+        Default display fields: pk, username, email, first_name, last_name
+        Read-only fields: pk, email
+
+        Returns UserModel fields.
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserDetails'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserDetails'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserDetails'
+        required: true
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDetails'
+          description: ''
+    patch:
+      operationId: v1_rest_auth_user_partial_update
+      description: |-
+        Reads and updates UserModel fields
+        Accepts GET, PUT, PATCH methods.
+
+        Default accepted fields: username, first_name, last_name
+        Default display fields: pk, username, email, first_name, last_name
+        Read-only fields: pk, email
+
+        Returns UserModel fields.
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUserDetails'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUserDetails'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUserDetails'
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDetails'
+          description: ''
+  /en-us/api/v1/session/:
+    get:
+      operationId: v1_session_list
+      description: This class defined the create behaviour of our rest api.
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Session'
+          description: ''
+    post:
+      operationId: v1_session_create
+      description: This class defined the create behaviour of our rest api.
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Session'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Session'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Session'
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+          description: ''
+  /en-us/api/v1/session/{uid}/:
+    get:
+      operationId: v1_session_retrieve
+      description: This class defined the create behaviour of our rest api.
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this session.
+        required: true
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+          description: ''
+    put:
+      operationId: v1_session_update
+      description: This class defined the create behaviour of our rest api.
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this session.
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Session'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Session'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Session'
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+          description: ''
+    patch:
+      operationId: v1_session_partial_update
+      description: This class defined the create behaviour of our rest api.
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this session.
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedSession'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedSession'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedSession'
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+          description: ''
+    delete:
+      operationId: v1_session_destroy
+      description: This class defined the create behaviour of our rest api.
+      parameters:
+      - in: path
+        name: uid
+        schema:
+          type: string
+          format: uuid
+        description: A UUID string identifying this session.
+        required: true
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /en-us/api/v1/users/login:
+    post:
+      operationId: v1_users_login_create
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Login'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Login'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Login'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Login'
+          description: ''
+  /en-us/api/v1/users/sendsms:
+    get:
+      operationId: v1_users_sendsms_retrieve
+      description: i ask client send me mobile number with get method or a query string
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: v1_users_sendsms_create
+      description: i ask client send me mobile number with get method or a query string
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /en-us/api/v1/users/signup/:
+    get:
+      operationId: v1_users_signup_list
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+          description: ''
+    post:
+      operationId: v1_users_signup_create
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+  /en-us/api/v1/users/signup/{id}/:
+    get:
+      operationId: v1_users_signup_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this profile.
+        required: true
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    put:
+      operationId: v1_users_signup_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this profile.
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    patch:
+      operationId: v1_users_signup_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this profile.
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    delete:
+      operationId: v1_users_signup_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this profile.
+        required: true
+      tags:
+      - v1
+      security:
+      - jwtHeaderAuth: []
+        jwtCookieAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    City:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        province:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        published_at:
+          type: string
+          format: date-time
+        title:
+          type: string
+          nullable: true
+          maxLength: 64
+      required:
+      - created
+      - id
+      - province
+      - updated
+    JWT:
+      type: object
+      description: Serializer for JWT authentication.
+      properties:
+        access_token:
+          type: string
+        refresh_token:
+          type: string
+        user:
+          $ref: '#/components/schemas/UserDetails'
+      required:
+      - access_token
+      - refresh_token
+      - user
+    Login:
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+      required:
+      - password
+    PasswordChange:
+      type: object
+      properties:
+        new_password1:
+          type: string
+          maxLength: 128
+        new_password2:
+          type: string
+          maxLength: 128
+      required:
+      - new_password1
+      - new_password2
+    PasswordReset:
+      type: object
+      description: Serializer for requesting a password reset e-mail.
+      properties:
+        email:
+          type: string
+          format: email
+      required:
+      - email
+    PasswordResetConfirm:
+      type: object
+      description: Serializer for confirming a password reset attempt.
+      properties:
+        new_password1:
+          type: string
+          maxLength: 128
+        new_password2:
+          type: string
+          maxLength: 128
+        uid:
+          type: string
+        token:
+          type: string
+      required:
+      - new_password1
+      - new_password2
+      - token
+      - uid
+    PatchedCity:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        province:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        published_at:
+          type: string
+          format: date-time
+        title:
+          type: string
+          nullable: true
+          maxLength: 64
+    PatchedProvince:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        published_at:
+          type: string
+          format: date-time
+        title:
+          type: string
+          nullable: true
+          maxLength: 64
+    PatchedSession:
+      type: object
+      description: Serializer to map the model instance into JSON format.
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        published_at:
+          type: string
+          format: date-time
+        user_type:
+          $ref: '#/components/schemas/UserTypeEnum'
+        device_name:
+          type: string
+          nullable: true
+          title: Device
+          maxLength: 225
+        notification_token:
+          type: string
+          nullable: true
+          maxLength: 128
+        uniqe_device_code:
+          type: string
+          nullable: true
+          title: Uniqe_device
+          maxLength: 128
+        client_version:
+          type: string
+          nullable: true
+          maxLength: 20
+        server_version:
+          type: string
+          nullable: true
+          maxLength: 100
+        refresh_has_token:
+          type: string
+          nullable: true
+          title: Refresh_token
+          maxLength: 225
+        client_ip:
+          type: string
+          readOnly: true
+          nullable: true
+          title: Remote address
+        is_blooked:
+          type: boolean
+          nullable: true
+        user:
+          type: integer
+          nullable: true
+    PatchedUser:
+      type: object
+      properties:
+        first_name:
+          type: string
+          maxLength: 150
+        mobile_number:
+          type: string
+          title: Mobile
+          maxLength: 12
+        last_name:
+          type: string
+          maxLength: 150
+        password:
+          type: string
+          maxLength: 128
+        email:
+          type: string
+          format: email
+          title: Email address
+          maxLength: 254
+        sendsms:
+          allOf:
+          - $ref: '#/components/schemas/VarifyOtpRequest'
+          writeOnly: true
+    PatchedUserDetails:
+      type: object
+      description: User model w/o password
+      properties:
+        pk:
+          type: integer
+          readOnly: true
+          title: ID
+        mobile_number:
+          type: string
+          title: Mobile
+          maxLength: 12
+        email:
+          type: string
+          format: email
+          readOnly: true
+          title: Email address
+        first_name:
+          type: string
+          maxLength: 150
+        last_name:
+          type: string
+          maxLength: 150
+    Province:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        published_at:
+          type: string
+          format: date-time
+        title:
+          type: string
+          nullable: true
+          maxLength: 64
+      required:
+      - created
+      - id
+      - updated
+    Register:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        password1:
+          type: string
+          writeOnly: true
+        password2:
+          type: string
+          writeOnly: true
+      required:
+      - email
+      - password1
+      - password2
+    ResendEmailVerification:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+      required:
+      - email
+    RestAuthDetail:
+      type: object
+      properties:
+        detail:
+          type: string
+          readOnly: true
+      required:
+      - detail
+    Session:
+      type: object
+      description: Serializer to map the model instance into JSON format.
+      properties:
+        uid:
+          type: string
+          format: uuid
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        published_at:
+          type: string
+          format: date-time
+        user_type:
+          $ref: '#/components/schemas/UserTypeEnum'
+        device_name:
+          type: string
+          nullable: true
+          title: Device
+          maxLength: 225
+        notification_token:
+          type: string
+          nullable: true
+          maxLength: 128
+        uniqe_device_code:
+          type: string
+          nullable: true
+          title: Uniqe_device
+          maxLength: 128
+        client_version:
+          type: string
+          nullable: true
+          maxLength: 20
+        server_version:
+          type: string
+          nullable: true
+          maxLength: 100
+        refresh_has_token:
+          type: string
+          nullable: true
+          title: Refresh_token
+          maxLength: 225
+        client_ip:
+          type: string
+          readOnly: true
+          nullable: true
+          title: Remote address
+        is_blooked:
+          type: boolean
+          nullable: true
+        user:
+          type: integer
+          nullable: true
+      required:
+      - client_ip
+      - created
+      - uid
+      - updated
+    TokenRefresh:
+      type: object
+      properties:
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+          writeOnly: true
+      required:
+      - access
+      - refresh
+    TokenVerify:
+      type: object
+      properties:
+        token:
+          type: string
+          writeOnly: true
+      required:
+      - token
+    User:
+      type: object
+      properties:
+        first_name:
+          type: string
+          maxLength: 150
+        mobile_number:
+          type: string
+          title: Mobile
+          maxLength: 12
+        last_name:
+          type: string
+          maxLength: 150
+        password:
+          type: string
+          maxLength: 128
+        email:
+          type: string
+          format: email
+          title: Email address
+          maxLength: 254
+        sendsms:
+          allOf:
+          - $ref: '#/components/schemas/VarifyOtpRequest'
+          writeOnly: true
+      required:
+      - mobile_number
+      - password
+      - sendsms
+    UserDetails:
+      type: object
+      description: User model w/o password
+      properties:
+        pk:
+          type: integer
+          readOnly: true
+          title: ID
+        mobile_number:
+          type: string
+          title: Mobile
+          maxLength: 12
+        email:
+          type: string
+          format: email
+          readOnly: true
+          title: Email address
+        first_name:
+          type: string
+          maxLength: 150
+        last_name:
+          type: string
+          maxLength: 150
+      required:
+      - email
+      - mobile_number
+      - pk
+    UserTypeEnum:
+      enum:
+      - User
+      - Admin
+      - Other
+      type: string
+    VarifyOtpRequest:
+      type: object
+      properties:
+        request_id:
+          type: string
+        code:
+          type: string
+          maxLength: 4
+        receiver:
+          type: string
+          maxLength: 64
+      required:
+      - code
+      - receiver
+      - request_id
+    VerifyEmail:
+      type: object
+      properties:
+        key:
+          type: string
+      required:
+      - key
+  securitySchemes:
+    jwtCookieAuth:
+      type: apiKey
+      in: cookie
+      name: access
+    jwtHeaderAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

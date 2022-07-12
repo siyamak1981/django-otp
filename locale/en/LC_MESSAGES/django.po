@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-07 14:26+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: education/settings.py:183
+msgid "English"
+msgstr ""
+
+#: education/settings.py:184
+msgid "Iran"
+msgstr ""
+
+#: painless/models/mixins.py:12
+msgid "published_at"
+msgstr ""
+
+#: session/apps.py:7
+msgid "session"
+msgstr ""
+
+#: session/models.py:13
+msgid "uid"
+msgstr ""
+
+#: session/models.py:15
+msgid "user_type"
+msgstr ""
+
+#: session/models.py:17
+msgid "notification_token"
+msgstr ""
+
+#: session/models.py:18
+msgid "uniqe_device"
+msgstr ""
+
+#: session/models.py:19
+msgid "client_version"
+msgstr ""
+
+#: session/models.py:20
+msgid "server_version"
+msgstr ""
+
+#: session/models.py:21
+msgid "refresh_token"
+msgstr ""
+
+#: session/models.py:22
+msgid "remote address"
+msgstr ""
+
+#: session/models.py:27
+msgid "session"
+msgstr "جلسه"
+
+#: session/models.py:28
+msgid "sessions"
+msgstr "جلسات"
