@@ -1,6 +1,7 @@
 # django-otp
 OTP based Authentication on Django-rest
-Authentication with thirs party package 
+Authentication and permissions - Django REST framework
+
 ![Screenshot from 2022-07-12 23-28-24](https://user-images.githubusercontent.com/43889064/178574641-c8ad6c5d-a310-4ee6-9b32-04d8a4572bb7.png)
 
 
